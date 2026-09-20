@@ -1,0 +1,24 @@
+{
+  "name": "pair-wise-gsb-workbench",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Deterministic keyboard/AT semantic comparison workbench for two local builds",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "generate-sample": "vite-node scripts/generate-sample.ts",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@types/node": "^22.7.0",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8",
+    "vitest": "^2.1.2",
+    "vite-node": "^2.1.2"
+  },
+  "allowScripts": {
+    "esbuild@0.21.5": true
+  }
+}

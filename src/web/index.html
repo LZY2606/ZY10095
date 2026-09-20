@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pair-wise GSB — キーボード/AT 意味比較</title>
+    <link rel="stylesheet" href="/styles/app.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <h1>Pair-wise GSB</h1>
+      <div class="meta">
+        <span id="rule-version" class="pill"></span>
+        <span id="batch-id" class="pill mono"></span>
+      </div>
+    </header>
+
+    <section id="setup" class="panel">
+      <h2>1. 入力を読み込む</h2>
+      <p class="hint">
+        DOM スナップショット・アクセシビリティツリー・フォーカスイベント・キー操作列を含む
+        バッチ JSON（または保存済みエクスポートパッケージ）を読み込みます。
+      </p>
+      <div class="row">
+        <button id="load-sample" type="button">サンプルデータを読み込む</button>
+        <label class="file-label">
+          ファイルを選択
+          <input id="file-input" type="file" accept="application/json,.json" hidden />
+        </label>
+        <span id="setup-status" class="status"></span>
+      </div>
+      <div class="row">
+        <label>操作者 <input id="operator" type="text" placeholder="researcher-id" /></label>
+      </div>
+    </section>
+
+    <section id="summary" class="panel hidden">
+      <h2>2. 最も早い分岐</h2>
+      <div id="earliest" class="earliest"></div>
+      <div id="finding-summary" class="finding-summary"></div>
+    </section>
+
+    <section id="timeline" class="panel hidden">
+      <h2>3. ステップ再生（到達可能ノード・役割/名前/状態・フォーカス移動）</h2>
+      <div id="frames"></div>
+    </section>
+
+    <section id="findings" class="panel hidden">
+      <h2>4. 分岐への判断（分類・理由・範囲付き除外・競合）</h2>
+      <div id="finding-list"></div>
+    </section>
+
+    <section id="export-panel" class="panel hidden">
+      <h2>5. エクスポート（オフライン再生可能な完全パッケージ）</h2>
+      <div class="row">
+        <button id="export-btn" type="button">エクスポートパッケージをダウンロード</button>
+        <button id="verify-btn" type="button" class="secondary">保存入力から再計算して検証</button>
+        <span id="verify-status" class="status"></span>
+      </div>
+    </section>
+
+    <script type="module" src="/main.ts"></script>
+  </body>
+</html>
